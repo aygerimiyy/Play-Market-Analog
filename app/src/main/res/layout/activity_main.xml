@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#000000">
+
+
+    <View
+        android:id="@+id/view_poisk"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/round"
+        app:layout_constraintBottom_toTopOf="@id/recycle_view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.137"/>
+
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Поиск игр и приложений"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@id/recycle_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.344"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        tools:ignore="InvalidId" />
+
+    <ImageView
+        android:id="@+id/img_search"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_voice"
+        app:layout_constraintBottom_toTopOf="@id/recycle_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        tools:ignore="InvalidId" />
+
+
+    <ImageView
+        android:id="@+id/img_voice"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toTopOf="@id/recycle_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
+        tools:ignore="InvalidId" />
+
+    <ImageView
+        android:id="@+id/img_account"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_account"
+        app:layout_constraintBottom_toTopOf="@id/recycle_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="InvalidId" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/text"
+        tools:listitem="@layout/item_inner" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintTop_toBottomOf="@id/recycle_view_menu"
+        app:layout_constraintBottom_toTopOf="@id/recycle_view"/>
+
+    <TextView
+        android:id="@+id/best_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:layout_marginStart="12dp"
+        android:text="Личшие игры"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintTop_toBottomOf="@id/recycle_view_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintBottom_toTopOf="@id/recycle_view"/>
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/arrow"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintBottom_toTopOf="@id/recycle_view"
+        app:layout_constraintStart_toEndOf="@id/best_game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/recycle_view_menu" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/recycle_view_menu"
+        tools:listitem="@layout/item_rv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
